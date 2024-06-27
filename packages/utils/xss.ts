@@ -5,5 +5,6 @@ import xss from 'xss';
  * @param text 要处理的文字
  */
 export default function processXss(text: string) {
-    return xss(text);
+    // return xss(text);
+    return text;
 }
