@@ -429,12 +429,13 @@ export async function deleteMessage(ctx: Context<{ messageId: string }>) {
         '只能撤回本人的消息',
     );
 
-    if (ctx.socket.isAdmin) {
-        await Message.deleteOne({ _id: messageId });
-    } else {
-        message.deleted = true;
-        await message.save();
-    }
+    await Message.deleteOne({ _id: messageId });
+    // if (ctx.socket.isAdmin) {
+    //     await Message.deleteOne({ _id: messageId });
+    // } else {
+    //     message.deleted = true;
+    //     await message.save();
+    // }
 
     /**
      * 广播删除消息通知, 区分群消息和私聊消息
