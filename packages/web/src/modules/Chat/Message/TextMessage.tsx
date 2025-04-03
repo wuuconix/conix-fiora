@@ -27,7 +27,7 @@ function TextMessage(props: TextMessageProps) {
 
     return (
         <div
-            className={Style.textMessage}
+            className={`${Style.textMessage} markdown-body`}
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{ __html: content }}
         />
